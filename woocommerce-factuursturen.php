@@ -19,13 +19,14 @@
 */
 // Plugin activation
 function wcfsnl_activate() {
-
+    require plugin_dir_path( __FILE__ ) . 'includes/wcfsnl-activation.php';
 }
 
 register_activation_hook( __FILE__, 'wcfsnl_activate' );
 
 // Plugin deactivation
 function wcfsnl_deactivate() {
-
+    require plugin_dir_path( __FILE__ ) . 'includes/wcfsnl-deactivation.php';
 }
+
 register_deactivation_hook( __FILE__, 'wcfsnl_deactivate' );
