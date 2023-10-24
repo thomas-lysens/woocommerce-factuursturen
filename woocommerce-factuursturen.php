@@ -17,6 +17,9 @@
 * License: GNU General Public License v3.0
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
+// Dependencies
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
 // Plugin activation
 function wcfsnl_activate() {
     require plugin_dir_path( __FILE__ ) . 'includes/wcfsnl-activation.php';
@@ -30,3 +33,8 @@ function wcfsnl_deactivate() {
 }
 
 register_deactivation_hook( __FILE__, 'wcfsnl_deactivate' );
+
+// If plugin is active, execute all the rest
+if ( is_plugin_active( 'woocommerce-factuursturen/woocommerce-factuursturen.php' ) ) {
+    require plugin_dir_path( __FILE__ ) . 'includes/wcfsnl-admin-pages.php';
+}
