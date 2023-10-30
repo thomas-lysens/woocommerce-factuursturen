@@ -33,3 +33,11 @@ function wcfsnl_admin_connect_page() {
 }
 
 add_action( 'admin_menu', 'wcfsnl_admin_connect_page' );
+
+function load_assets() {
+    if ( strpos( $_SERVER["REQUEST_URI"], "page=wc-fsnl-connect" ) ) {
+        wp_enqueue_style( "wcfsnl-admin-connect", plugin_dir_url( __DIR__ ) . 'admin/assets/css/admin-connect.css' );
+    }
+}
+
+add_action( 'admin_enqueue_scripts', 'load_assets' );

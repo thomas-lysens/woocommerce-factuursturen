@@ -1,0 +1,40 @@
+.form-region {
+    width: 60%;
+    padding: 50px;
+    margin: 50px auto 0 auto;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+.fields {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    gap: 10px;
+}
+
+.field-block {
+    position: relative;
+}
+
+.field-block > #api-key, .field-block > #api-user {
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.field-block > #submit {
+    color: #5B5;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px 15px;
+    border: solid 2px #5B5;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.field-block > #submit:hover {
+    color: #FFFFFF;
+    background-color: #5B5;
+}
