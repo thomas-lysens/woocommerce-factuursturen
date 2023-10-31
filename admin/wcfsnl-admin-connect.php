@@ -17,6 +17,14 @@ if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
         }
     }
 }
+
+$placeholder_a = "";
+$placeholder_b = "";
+
+if ( get_option( 'wcfsnl_api_key' ) != "" && get_option( 'wcfsnl_api_user' ) != "" ) {
+    $placeholder_a = get_option( 'wcfsnl_api_key' );
+    $placeholder_b = get_option( 'wcfsnl_api_user' );
+} 
 ?>
 <div class="wrap">
     <h1>WooCommerce - Factuursturen.nl | Connect</h1>
@@ -26,12 +34,12 @@ if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
                 <div class="field-block">
                     <label for="api-key">API KEY</label>
                     <br/>
-                    <input type="password" id="api-key" name="api-key">
+                    <input type="text" id="api-key" name="api-key" placeholder="<?php echo $placeholder_a; ?>">
                 </div>
                 <div class="field-block">
                     <label for="api-user">USER</label>
                     <br/>
-                    <input type="text" id="api-user" name="api-user">
+                    <input type="text" id="api-user" name="api-user" placeholder="<?php echo $placeholder_b; ?>">
                 </div>
                 <div class="field-block">
                     <input type="submit" id="submit" value="Connect">
