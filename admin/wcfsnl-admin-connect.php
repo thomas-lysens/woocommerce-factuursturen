@@ -3,12 +3,15 @@
  * WooCommerce Factuursturen.nl connect page
  * This page contains the form (and functionality) to store the login credentials for the factuursturen API
  */
+// Required files
+require plugin_dir_path( __DIR__ ) . 'includes/wcfsnl-main.php';
+
 if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
     $api_key = "";
     $api_user = "";
 
     if ( !empty( $_POST['api-key'] ) ) {
-        $api_key = htmlspecialchars ($_POST['api-key'], ENT_QUOTES );
+        $api_key = htmlspecialchars($_POST['api-key'], ENT_QUOTES );
         if ( !empty( $_POST['api-user'] ) ) {
             $api_user = htmlspecialchars( $_POST['api-user'], ENT_QUOTES);
 
@@ -16,6 +19,8 @@ if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
             update_option( 'wcfsnl_api_user', $api_user);
         }
     }
+
+    $wcfsnl->connection_test();
 }
 
 $placeholder_a = "";
