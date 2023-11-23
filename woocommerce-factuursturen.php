@@ -37,5 +37,4 @@ register_deactivation_hook( __FILE__, 'wcfsnl_deactivate' );
 // If plugin is active, execute all the rest
 if ( is_plugin_active( 'woocommerce-factuursturen/woocommerce-factuursturen.php' ) ) {
     require plugin_dir_path( __FILE__ ) . 'includes/wcfsnl-admin-pages.php';
-    require plugin_dir_path( __FILE__ ) . 'includes/wcfsnl-main.php';
 }
