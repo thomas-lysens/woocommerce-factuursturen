@@ -4,7 +4,10 @@
  * This page contains the form (and functionality) to store the login credentials for the factuursturen API
  */
 // Required files
-require plugin_dir_path( __DIR__ ) . 'includes/wcfsnl-main.php';
+require_once plugin_dir_path( __DIR__ ) . 'includes/wcfsnl-main.php';
+use Main\Includes\WCFSNL_MAIN;
+
+$wcfsnl = new WCFSNL_MAIN( get_option( 'wcfsnl_api_key' ), get_option( 'wcfsnl_api_user' ) );
 
 if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
     $api_key = "";
